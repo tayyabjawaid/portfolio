@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+    --font-inter: "Inter", sans-serif;
+    --font-raleway: "Raleway", serif;
+    --color-primary: #0e1114;
+    --color-secondary: #353535;
+    --color-white: #ffffff;
+    --color-accent: #ffb224;
+    --color-accent2: #8f8f8f;
+}
+
+@layer utilities {
+    .menu-link { @apply text-white border-white bg-transparent border px-4 py-2 md:px-4 md:py-3 leading-tight transition-all duration-300 ease-in-out hover:text-secondary hover:bg-accent hover:border-accent rounded-full flex }
+    .paragraph { @apply text-white text-sm md:text-base lg:text-lg leading-relaxed text-center md:text-left; }
+    .heading-one { @apply font-bold font-raleway leading-tight text-4xl md:text-5xl lg:text-6xl text-center md:text-left; }
+    .heading-two { @apply font-bold font-raleway leading-tight text-3xl md:text-4xl lg:text-5xl text-center md:text-left; }
+    .heading-three { @apply font-bold font-raleway leading-tight text-2xl md:text-3xl lg:text-4xl text-center md:text-left; }
+    .heading-four { @apply font-bold font-raleway leading-tight text-xl md:text-2xl lg:text-3xl text-center md:text-left; }
+    .heading-five { @apply font-bold font-raleway leading-tight text-lg md:text-xl lg:text-2xl text-center md:text-left; }
+    .heading-six { @apply font-bold font-raleway leading-tight text-base md:text-lg lg:text-xl text-center md:text-left; }
+    .content-heading { @apply relative after:content-[""] after:absolute after:-bottom-3 after:left-0 after:h-1 after:bg-accent after:w-1/3; }
+    .max-w-large { @apply max-w-[1080px]; }
+    .theme-btn-1 { @apply px-4 py-3 md:px-6 md:py-3 lg:px-8 lg:py-4 leading-tight border bg-transparent text-white border-white lg:text-lg md:text-base text-sm rounded-full hover:bg-accent hover:border-accent hover:text-secondary active:bg-accent active:border-accent active:text-secondary cursor-pointer antialiased transition-all duration-200 select-none font-medium }
+    .theme-btn-2 { @apply px-4 py-3 md:px-6 md:py-3 lg:px-8 lg:py-4 leading-tight border bg-accent text-secondary border-accent lg:text-lg md:text-base text-sm rounded-full hover:bg-transparent hover:border-white hover:text-white active:bg-transparent active:border-white active:text-white cursor-pointer antialiased transition-all duration-200 select-none font-medium }
+
+    .mobile-menu { @apply fixed top-0 left-0 z-99999 bg-primary/80 text-white backdrop-blur-2xl w-full h-full transition-all duration-400 ease-in-out px-5; }
+}
+
+@layer base {
+    html, body {
+        font-family: var(--font-inter);
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
+}
